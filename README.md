@@ -60,7 +60,7 @@ El backend requiere una **API Key válida de AEMET**, configurada en:
 backend/src/main/resources/application.properties
 
 aemet.base-url=https://opendata.aemet.es/opendata/api
-aemet.api-key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZW9tY3lAZ21haWwuY29tIiwianRpIjoiNDEwOWE3ZjgtNjk0Yi00NDA0LTg0NjctMGRlYWI5MDVkOWY2IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE3NTg3ODUwODEsInVzZXJJZCI6IjQxMDlhN2Y4LTY5NGItNDQwNC04NDY3LTBkZWFiOTA1ZDlmNiIsInJvbGUiOiIifQ.FDrATSA0mYhWX0yNW2lS_Ej0wCh-RwGA5eLdekqMWM4
+aemet.api-key=API-KEY
 
 ---
 
