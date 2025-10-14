@@ -1,0 +1,36 @@
+<div class="search-container">
+  <h2>Buscar Municipio</h2>
+
+  <div style="display: flex; gap: 8px; align-items: center;">
+    <mat-form-field appearance="outline" style="flex: 1;">
+      <mat-label>Introduce el nombre del municipio</mat-label>
+      <input
+        matInput
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="onSearch()"
+        placeholder="Ej: Madrid"
+        aria-label="Nombre municipio"
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onSearch()"
+      [disabled]="!searchTerm.trim()"
+    >
+      Buscar
+    </button>
+  </div>
+
+  <div style="margin-top: 12px;" *ngIf="municipios && municipios.length > 0">
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label>Municipios encontrados</mat-label>
+      <mat-select [(value)]="selectedMunicipioId" (selectionChange)="onSelect()">
+        <mat-option *ngFor="let m of municipios" [value]="m.id">
+          {{ m.nombre || m.name || m.id }} ({{ m.id }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

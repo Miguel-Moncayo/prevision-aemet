@@ -1,0 +1,26 @@
+<div class="app-container">
+  <h1>🌤️ Previsión AEMET</h1>
+
+  <!-- Buscar municipio -->
+  <app-search-municipality
+    (municipioSeleccionado)="onMunicipioSelected($event)">
+  </app-search-municipality>
+
+  <!-- Selector de unidades -->
+ <mat-form-field appearance="fill">
+   <mat-label>Unidad</mat-label>
+   <mat-select [(value)]="selectedUnit">
+    <mat-option value="G_CEL">°C</mat-option>
+    <mat-option value="G_FAH">°F</mat-option>
+   </mat-select>
+ </mat-form-field>
+
+
+  <!-- Mostrar previsión solo si hay municipio seleccionado -->
+  <ng-container *ngIf="selectedMunicipioId">
+    <app-forecast-list
+      [municipioId]="selectedMunicipioId"
+      [unit]="selectedUnit">
+    </app-forecast-list>
+  </ng-container>
+</div>

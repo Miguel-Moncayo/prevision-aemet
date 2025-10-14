@@ -1,0 +1,32 @@
+<div class="forecast-container" *ngIf="municipioId">
+  <h2>📅 Previsión para {{ municipioId }}</h2>
+
+  <!-- Cargando -->
+  <div *ngIf="loading" class="loading">Cargando previsión...</div>
+
+  <!-- Error -->
+  <div *ngIf="error && !loading" class="error" style="color:#a00; margin:.5rem 0;">
+    {{ error }}
+  </div>
+
+  <!-- Datos -->
+  <div *ngIf="forecast && !loading && !error">
+    <p>
+      <strong>🌡️ Temperatura media:</strong>
+      {{ forecast.mediaTemperatura | number: '1.0-1' }} {{ forecast.unidadTemperatura }}
+    </p>
+
+    <div *ngIf="forecast.probPrecipitacion?.length; else noRain">
+      <h3>🌧️ Probabilidad de precipitación</h3>
+      <ul>
+        <li *ngFor="let p of forecast.probPrecipitacion">
+          Periodo <strong>{{ p.periodo || '—' }}</strong> → {{ p.probabilidad }} %
+        </li>
+      </ul>
+    </div>
+
+    <ng-template #noRain>
+      <p style="color:#666">Sin datos de precipitación disponibles.</p>
+    </ng-template>
+  </div>
+</div>
