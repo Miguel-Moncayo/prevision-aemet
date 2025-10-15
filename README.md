@@ -6,17 +6,16 @@ Aplicación completa (Angular + Spring Boot) que consume la API de la **AEMET** 
 
 ## 🧩 Estructura del proyecto
 
-prevision-aemet-v10/
-│
-├── backend/          # Proyecto Spring Boot (API REST)
+📂 prevision-aemet-v10/
+├── backend/              # Proyecto Spring Boot (API REST)
 │   ├── src/
 │   ├── pom.xml
-│   └── Dockerfile
+│   ├── Dockerfile
 │
-├── frontend/         # Proyecto Angular (Interfaz de usuario)
+├── frontend/             # Proyecto Angular (interfaz de usuario)
 │   ├── src/
 │   ├── package.json
-│   └── Dockerfile
+│   ├── Dockerfile
 │
 └── README.md
 
