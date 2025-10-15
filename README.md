@@ -96,6 +96,38 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ---
 
+## 🧱 Imágenes Docker publicadas en GHCR
+
+Como parte del despliegue final, las imágenes Docker del **backend** y **frontend** han sido construidas y publicadas en el **GitHub Container Registry (GHCR)**, cumpliendo con el requisito de entrega.
+
+### 📦 Imágenes disponibles:
+
+Componente | Imagen | Estado
+-------------|---------|--------
+Backend (Spring Boot) | ghcr.io/miguel-moncayo/prevision-aemet-backend:latest | ✅ Publicada
+Frontend (Angular) | ghcr.io/miguel-moncayo/prevision-aemet-frontend:latest | ✅ Publicada
+
+Estas imágenes están **disponibles públicamente** y pueden ejecutarse sin necesidad de credenciales.
+
+---
+
+### ▶️ Ejecución con Docker
+
+**Backend**
+docker pull ghcr.io/miguel-moncayo/prevision-aemet-backend:latest
+docker run -p 8080:8080 ghcr.io/miguel-moncayo/prevision-aemet-backend:latest
+
+**Frontend**
+docker pull ghcr.io/miguel-moncayo/prevision-aemet-frontend:latest
+docker run -p 4200:80 ghcr.io/miguel-moncayo/prevision-aemet-frontend:latest
+
+Una vez levantados:
+- Frontend → http://localhost:4200
+- Backend → http://localhost:8080/api
+
+
+---
+
 ## 💡 Tecnologías usadas
 
 - Backend: Spring Boot 3, WebFlux, Maven, Java 17
