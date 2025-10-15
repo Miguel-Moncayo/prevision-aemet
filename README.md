@@ -22,7 +22,7 @@ Aplicación completa (Angular + Spring Boot) que consume la API de la **AEMET** 
 ---
 
 ## ⚙️ Ejecución en local
-'''
+
 ### 1️⃣ Backend
 cd backend
 mvn spring-boot:run
@@ -33,31 +33,31 @@ cd frontend
 npm install
 ng serve
 # Servirá la web en: http://localhost:4200
-'''
+
 ---
 
 
 ## 🧰 Configuración necesaria
-'''
+
 El backend requiere una **API Key válida de AEMET**, configurada en:
 backend/src/main/resources/application.properties
 
 aemet.base-url=https://opendata.aemet.es/opendata/api
 aemet.api-key=API-KEY
-'''
+
 ---
 
 ## 📡 Endpoints principales
-'''
+
 Método | Endpoint | Descripción
 -------|-----------|--------------
 GET | /api/municipalities?name={nombre} | Busca municipios por nombre
 GET | /api/forecast/{idMunicipio} | Obtiene la previsión meteorológica del municipio
-'''
+
 ---
 
 ## 🐋 Dockerfiles incluidos
-'''
+
 ### backend/Dockerfile
 
 # Etapa 1: Compilación del backend
@@ -74,9 +74,9 @@ COPY --from=build /app/target/weather-app-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
-'''
+
 ---
-'''
+
 ### frontend/Dockerfile
 
 # Etapa 1: Construcción del frontend Angular
@@ -93,28 +93,27 @@ COPY --from=build /app/dist/frontend /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-'''
+
 ---
 
 ## 💡 Tecnologías usadas
-'''
+
 - Backend: Spring Boot 3, WebFlux, Maven, Java 17
 - Frontend: Angular 17, TypeScript, HTML, CSS
 - Infraestructura: Docker, NGINX, Eclipse Temurin JDK 17
-'''
 ---
 
 ## ✅ Estado del proyecto
-'''
+
 Módulo | Estado
 --------|--------
 Backend | ✅ 100% funcional
 Frontend | ✅ 100% funcional
 Integración | ✅ Probada y correcta
 Docker & README | ✅ Incluidos
-'''
+
 ---
-'''
+
 Autor: Miguel Moncayo
 Fecha: Octubre 2025
-'''
+
